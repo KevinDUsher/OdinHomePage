@@ -33,6 +33,10 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
       },
+      {
+        test: /\.(mp3|wav|ogg|aac)$/i, // Match common audio file extensions
+        type: 'asset/resource', // Emit a separate file and export its URL
+      },
     ],
   },
 };

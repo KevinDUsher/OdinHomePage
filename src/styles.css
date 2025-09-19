@@ -1,0 +1,688 @@
+:root{
+    --zelda-green: #0B5E16;
+    --triforce-gold: #B88900;
+    --hylian-blue:  #1F5AA6;
+    --hyrule-light: #F3FAF5;
+    --text-primary: #F3FAF5;
+    --description-background: #0A2A1B;
+    --special-black: #0C0F0D;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body #root{
+    min-width: 100%;
+    background-color: var(--zelda-green);
+}
+
+img{
+    max-width: 100%;
+}
+
+@media (min-width: 1200px){
+    .topContainer{
+        position: relative; 
+        max-width: 100%;
+        padding: 5%;
+        z-index: 20;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+        border-radius: 0 0 16px 16px;
+    }
+    .topLeftContainer{
+        display: inline-block;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 1);
+        max-width: 30%;
+        overflow: hidden;
+        position: relative;
+        vertical-align: middle;
+        border-radius: 1rem;
+    }
+    .topImageContainer{
+        display: flex;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        
+    }
+    .topImageLabel{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10%;
+        color: var(--text-primary);
+    }
+    .topImage{
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%;
+    }
+    .topRightContainer{
+        display: inline-block;
+        padding: 5% 2% 5% 1%;
+        max-width: 58%;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        vertical-align: middle;
+        background-color: var(--triforce-gold);
+        border-radius: 0 1rem 1rem 0;
+        color: var(--zelda-green);
+        font-weight: bolder;
+    }
+    .topIconContainer{
+        position: relative;
+        text-align: right;
+    }
+    .topIcons{
+        position: relative;
+        max-width: 5%;
+        right: 0;
+    }
+
+    /**** Middle Section ****/
+    .middleContainer{
+        position: relative; 
+        z-index: 1;                  
+        max-width: 100%;
+        background-color: var(--hyrule-light);
+    }
+
+    .middleCards{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center; 
+    }
+
+    .cardContainer{
+        border: 1rem solid var(--triforce-gold);
+        background-color: var(--zelda-green);
+        aspect-ratio: 3 / 4;
+        max-width: 100%;
+        padding: 2rem;
+        margin: 2rem;
+        display: grid;
+        grid-template-rows: 60% 40%;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+        transform: translateY(0);
+        transition: transform 1s ease-out , box-shadow 1s ease-out;
+    }
+    .cardImageContainer{
+        background-color: var(--hyrule-light);
+        place-items: center;
+        overflow: hidden;
+        display: flex;
+    }
+    .cardImage{
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        object-fit: cover;
+        object-position: center; 
+    }
+    .cardBottom{
+        border: 0.2rem solid var(--triforce-gold);
+        color: var(--text-primary);
+        background-color: var(--description-background);
+        margin-top: 1rem;
+        border-radius: 1rem;
+        container-type: inline-size;
+    }
+    .bottomTopCard{
+        border-bottom: 0.2rem solid var(--triforce-gold);
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        container-type: inline-size;
+    }
+    .bottomTopPCard{
+        max-width: 60%;
+        min-width: 0;
+        font-size: 8cqi;
+        font-weight: bolder;
+        color: var(--text-primary);
+    }
+    .cardBottomArticle{
+        padding: 0 0.2rem 0.2rem 0.2rem;
+        font-size: clamp(0.875rem, 1.6cqi, 1.125rem);
+        line-height: 1.35;
+    }
+    .cardIconDiv{
+        margin-left: auto; 
+        max-width: 40%;
+        text-align: right;
+    }
+
+    .cardIcons{
+        max-width: 30%;
+    }
+    /******* Bottom Section ******/
+
+    .bottomContainer{
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--zelda-green);
+        box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.7);
+    }
+
+    .bottomLeftContainer{
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        justify-self: center;       
+        align-self: center;  
+        color: var(--text-primary);
+        background-color: var(--description-background);
+        margin: 2rem;
+        border: var(--triforce-gold) solid 0.5rem;
+        max-width: 50%;
+        padding: 1rem;
+        border-radius: 1rem;
+        display: inline-block;
+    }
+
+    .bottomLeftH2{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomLeftP{
+        max-width: 100%;
+        text-align: center;
+        display: block;
+        margin: 1rem;
+    }
+
+    .bottomEmailDiv > .bottomLeftP, .bottomPhoneDiv > .bottomLeftP{
+        display: inline-block;
+    }
+
+    .bottomEmailDiv, .bottomPhoneDiv{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomArticleIcon, .bottomArticleIcon{
+        max-width: 5%;
+        display: inline;
+    }
+
+    .bottomIconDiv{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomIcons{
+        max-width: 20%;
+    }
+
+    .bottomRightImageContainer{
+        display: flex;
+        
+    }
+
+    .bottomRightImage{
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        flex: 0 1 80%;
+        margin: 2rem;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center; 
+        border-radius: 1rem;
+        border: var(--triforce-gold) solid 0.5rem;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1199px){
+    .topContainer{
+        position: relative; 
+        max-width: 100%;
+        padding: 5%;
+        z-index: 20;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+        border-radius: 0 0 16px 16px;
+    }
+    .topLeftContainer{
+        display: inline-block;
+        min-width: 15rem;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 1);
+        max-width: 30%;
+        overflow: hidden;
+        position: relative;
+        vertical-align: middle;
+        border-radius: 1rem;
+    }
+    .topImageContainer{
+        display: flex;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        
+    }
+    .topImageLabel{
+        position: absolute;
+        bottom: 10%;
+        color: var(--text-primary);
+    }
+    .topImage{
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%;
+    }
+    .topRightContainer{
+        min-width: 23rem;
+        display: inline-block;
+        padding: 5% 2% 5% 1%;
+        max-width: 58%;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        vertical-align: middle;
+        background-color: var(--triforce-gold);
+        border-radius: 0 1rem 1rem 0;
+        color: var(--zelda-green);
+        font-weight: bolder;
+    }
+    .topIconContainer{
+        position: relative;
+        text-align: right;
+    }
+    .topIcons{
+        min-width: 2rem;
+        position: relative;
+        max-width: 5%;
+        right: 0;
+    }
+
+    /**** Middle Section ****/
+    .middleContainer{
+        position: relative; 
+        z-index: 1;                  
+        max-width: 100%;
+        background-color: var(--hyrule-light);
+    }
+
+    .middleCards{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center; 
+    }
+
+    .cardContainer{
+        
+        border: 1rem solid var(--triforce-gold);
+        background-color: var(--zelda-green);
+        aspect-ratio: 3 / 4;
+        max-width: 100%;
+        padding: clamp(0.5rem, 2vw, 2rem);
+        margin:  clamp(0, 2vw, 2rem);
+        display: grid;
+        grid-template-rows: 60% 40%;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+        transform: translateY(0);
+        transition: transform 1s ease-out , box-shadow 1s ease-out;
+    }
+    .cardImageContainer{
+        background-color: var(--hyrule-light);
+        place-items: center;
+        overflow: hidden;
+        display: flex;
+    }
+    .cardImage{
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        object-fit: cover;
+        object-position: center; 
+    }
+    .cardBottom{
+        min-width: 17rem;
+        border: 0.2rem solid var(--triforce-gold);
+        color: var(--text-primary);
+        background-color: var(--description-background);
+        margin-top: 1rem;
+        border-radius: 1rem;
+        container-type: inline-size;
+    }
+    .bottomTopCard{
+        border-bottom: 0.2rem solid var(--triforce-gold);
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        container-type: inline-size;
+    }
+    .bottomTopPCard{
+        max-width: 60%;
+        min-width: 0;
+        font-size: 8cqi;
+        font-weight: bolder;
+        color: var(--text-primary);
+    }
+    .cardBottomArticle{
+        padding: 0 0.2rem 0.2rem 0.2rem;
+        font-size: clamp(0.875rem, 1.6cqi, 1.125rem);
+        line-height: 1.35;
+    }
+    .cardIconDiv{
+        margin-left: auto; 
+        max-width: 40%;
+        text-align: right;
+    }
+
+    .cardIcons{
+        max-width: 30%;
+    }
+    /******* Bottom Section ******/
+
+    .bottomContainer{
+        z-index: 2;
+        display: grid;
+        padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--zelda-green);
+        box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.7);
+    }
+
+    .bottomLeftContainer{
+        min-width: 16rem;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        justify-self: center;       
+        align-self: center;  
+        color: var(--text-primary);
+        background-color: var(--description-background);
+        border: var(--triforce-gold) solid 0.5rem;
+        max-width: 50%;
+        padding: 1rem;
+        border-radius: 1rem;
+        display: inline-block;
+    }
+
+    .bottomLeftH2{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomLeftP{
+        max-width: 100%;
+        text-align: center;
+        display: block;
+        margin: 1rem;
+    }
+
+    .bottomEmailDiv > .bottomLeftP, .bottomPhoneDiv > .bottomLeftP{
+        display: inline-block;
+    }
+
+    .bottomEmailDiv, .bottomPhoneDiv{
+        width: 100%;
+        text-align: center;
+    }
+
+    .bottomArticleIcon, .bottomArticleIcon{
+        max-width: 15%;
+        min-width: 12%;
+        display: inline;
+    }
+
+    .bottomIconDiv{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomIcons{
+        max-width: 20%;
+    }
+
+    .bottomRightImageContainer{
+        display: flex;
+        
+    }
+
+    .bottomRightImage{
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        flex: 0 1 80%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center; 
+        border-radius: 1rem;
+        border: var(--triforce-gold) solid 0.5rem;
+    }
+}
+
+@media (max-width: 699px){
+    .topContainer{
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        max-width: 100%;
+        padding: 5%;
+        z-index: 20;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+        border-radius: 0 0 16px 16px;
+    }
+    .topLeftContainer{
+        min-width: 15rem;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 1);
+        max-width: 30%;
+        overflow: hidden;
+        position: relative;
+        vertical-align: middle;
+        border-radius: 1rem;
+    }
+    .topImageContainer{
+        display: flex;
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        
+    }
+    .topImageLabel{
+        position: absolute;
+        bottom: 10%;
+        color: var(--text-primary);
+    }
+    .topImage{
+        object-fit: cover;
+        object-position: center;
+        max-width: 100%;
+    }
+    .topRightContainer{
+        min-width: 20rem;
+        display: inline-block;
+        padding: 5% 2% 5% 1%;
+        max-width: 58%;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        vertical-align: middle;
+        background-color: var(--triforce-gold);
+        border-radius: 1rem;
+        color: var(--zelda-green);
+        font-weight: bolder;
+    }
+    .topIconContainer{
+        position: relative;
+        text-align: right;
+    }
+    .topIcons{
+        min-width: 2rem;
+        position: relative;
+        max-width: 5%;
+        right: 0;
+    }
+
+    /**** Middle Section ****/
+    .middleContainer{
+        position: relative; 
+        z-index: 1;                  
+        max-width: 100%;
+        background-color: var(--hyrule-light);
+    }
+
+    .middleCards{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center; 
+    }
+
+    .cardContainer{
+        
+        border: 1rem solid var(--triforce-gold);
+        background-color: var(--zelda-green);
+        aspect-ratio: 3 / 4;
+        max-width: 100%;
+        padding: clamp(0.5rem, 2vw, 2rem);
+        margin:  1rem;
+        display: grid;
+        grid-template-rows: 60% 40%;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        border-radius: 1rem;
+        transform: translateY(0);
+        transition: transform 1s ease-out , box-shadow 1s ease-out;
+    }
+    .cardImageContainer{
+        background-color: var(--hyrule-light);
+        place-items: center;
+        overflow: hidden;
+        display: flex;
+    }
+    .cardImage{
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        object-fit: cover;
+        object-position: center; 
+    }
+    .cardBottom{
+        
+        border: 0.2rem solid var(--triforce-gold);
+        color: var(--text-primary);
+        background-color: var(--description-background);
+        margin-top: 1rem;
+        border-radius: 1rem;
+        container-type: inline-size;
+    }
+    .bottomTopCard{
+        border-bottom: 0.2rem solid var(--triforce-gold);
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        container-type: inline-size;
+    }
+    .bottomTopPCard{
+        max-width: 60%;
+        min-width: 0;
+        font-size: 8cqi;
+        font-weight: bolder;
+        color: var(--text-primary);
+    }
+    .cardBottomArticle{
+        padding: 0 0.2rem 0.2rem 0.2rem;
+        font-size: clamp(0.875rem, 1.6cqi, 1.125rem);
+        line-height: 1.35;
+    }
+    .cardIconDiv{
+        margin-left: auto; 
+        max-width: 40%;
+        text-align: right;
+    }
+
+    .cardIcons{
+        max-width: 30%;
+    }
+    /******* Bottom Section ******/
+
+    .bottomContainer{
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        background-color: var(--zelda-green);
+        box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.7);
+    }
+
+    .bottomLeftContainer{
+        min-width: 16rem;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        justify-self: center;       
+        align-self: center;  
+        color: var(--text-primary);
+        background-color: var(--description-background);
+        border: var(--triforce-gold) solid 0.5rem;
+        max-width: 50%;
+        padding: 1rem;
+        border-radius: 1rem;
+        display: inline-block;
+    }
+
+    .bottomLeftH2{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomLeftP{
+        max-width: 100%;
+        text-align: center;
+        display: block;
+        margin: 1rem;
+    }
+
+    .bottomEmailDiv > .bottomLeftP, .bottomPhoneDiv > .bottomLeftP{
+        display: inline-block;
+    }
+
+    .bottomEmailDiv, .bottomPhoneDiv{
+        width: 100%;
+        text-align: center;
+    }
+
+    .bottomArticleIcon, .bottomArticleIcon{
+        max-width: 15%;
+        min-width: 12%;
+        display: inline;
+    }
+
+    .bottomIconDiv{
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .bottomIcons{
+        max-width: 20%;
+    }
+
+    .bottomRightImageContainer{
+        display: flex;
+        
+    }
+
+    .bottomRightImage{
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
+        flex: 0 1 80%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center; 
+        border-radius: 1rem;
+        border: var(--triforce-gold) solid 0.5rem;
+    }
+}
+
+.cardContainer:hover{
+    transform: translateY(-20px);
+     box-shadow:
+    0 0 2rem rgba(0,230,255,.6),   /* cyan glow */
+    0 0 8rem rgba(0,230,255,.35),  /* outer glow */
+    0 0 1.25rem rgba(0,0,0,.45);   /* keep a soft base */
+}
+
+@keyframes wiggleY {
+    0% { transform: rotateZ(-3deg); }
+    100% { transform: rotateZ(3deg); }
+}
